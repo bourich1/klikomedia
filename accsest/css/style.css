@@ -24,6 +24,12 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+.home{
+    width: 100%;
+    background-image: url("/accsest/image/motif-klikomedia.svg") !important;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
 
 /* Navigation */
 nav {
@@ -102,14 +108,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 200px;
 }
-.hero .image-hero video{
-    width: 200px;
+.hero .image-hero img{
+    width: 600px;
+    animation: customAni 5s ease 0s infinite normal none;
 }
 
 /* team section */
 .team-section {
-    padding: 60px 20px;
+    padding:0px 20px 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -139,7 +147,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .team-member {
@@ -156,37 +164,43 @@ nav {
 .team-member:nth-child(1) { animation-delay: 0.1s; }
 .team-member:nth-child(2) { animation-delay: 0.3s; }
 .team-member:nth-child(3) { animation-delay: 0.5s; }
+@keyframes customAni {
+  0%,
+  50%,
+  100% {
+	opacity: 1;
+  }
+
+  25%,
+  75% {
+	opacity: 0;
+  }
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.member-image {
+    .member-image {
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: white;
     }
 
     .member-image img {
-      --s: 200px;       /* image size */
-      --b: 6px;         /* border thickness */
-      --g: 6px;        /* gap */
+      --s: 250px;       /* image size */
       --c: #4ECDC4;     /* border color */
-
       width: var(--s);
       aspect-ratio: 1;
       object-fit: cover;
-      border-radius: 50%;
-      outline: calc(var(--s)/2) solid rgba(0, 0, 0, 0.13);
-      outline-offset: calc(var(--s)/-2);
       cursor: pointer;
       transition: 0.3s;
     }
 
     .member-image img:hover {
-      outline: var(--b) solid var(--c);
-      outline-offset: var(--g);
+      transform: scale(1.1);
     }
 
 .member-info {
@@ -265,6 +279,11 @@ nav {
 /* Responsive Design */
 /* Mobile Stacking */
 @media (max-width: 768px) {
+    
+    .hero .image-hero img{
+    width: 300px;
+    }
+    
     .logo img{
         height: 20px;
     }
@@ -275,7 +294,8 @@ nav {
     .team-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 70px;
+        padding-top: 70px;
     }
     
     .team-member {
